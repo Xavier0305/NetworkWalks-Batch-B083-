@@ -1,0 +1,111 @@
+WK1-PM1 – Cybersecurity Testing Lab Setup
+1. Project Overview
+
+As part of Week 1 of the Networkwalks Cybersecurity Program, the task was to set up a virtual cybersecurity testing laboratory for practicing ethical hacking and penetration-testing techniques.
+
+The provided setup instructions were designed around VirtualBox on Windows. Since my laptop uses an Apple M2 processor and macOS, I implemented the laboratory using UTM with an ARM64-compatible Kali Linux virtual machine.
+
+The existing Kali Linux VM was used because it already contained important university files and configurations.
+
+2. Lab Environment
+Component	Configuration
+Host Device	MacBook
+Host OS	macOS
+Processor	Apple M2
+Virtualization	UTM
+Attacking Machine	Kali Linux
+Kali Version	Kali GNU/Linux Rolling 2025.3
+Architecture	ARM64
+Lab Network	10.0.0.0/24
+Kali IP	10.0.0.2/24
+
+[INSERT SCREENSHOT – Mac/UTM Setup]
+
+3. Lab Setup
+
+The following steps were completed as part of the laboratory setup:
+
+Kali Linux Setup
+
+The existing Kali Linux ARM64 virtual machine was configured and used as the primary attacking/security-testing machine.
+
+The operating system and architecture were verified using:
+
+cat /etc/os-release
+uname -m
+
+[INSERT SCREENSHOT – Kali Version & Architecture]
+
+Network Configuration
+
+The laboratory was configured around the required:
+
+Network: 10.0.0.0/24
+Kali IP: 10.0.0.2/24
+
+The configuration was checked using:
+
+ip a
+ip route
+
+[INSERT SCREENSHOT – ip a]
+
+[INSERT SCREENSHOT – ip route]
+
+File Sharing and Clipboard
+
+UTM-supported sharing features were configured to provide convenient communication between the macOS host and Kali Linux VM.
+
+These features allow files and information required for laboratory exercises to be transferred between the host and virtual machine.
+
+[INSERT SCREENSHOT – UTM Sharing Settings]
+
+4. Connectivity Verification
+
+Kali Linux network connectivity was tested using the following commands:
+
+Internet Connectivity
+ping 8.8.8.8
+DNS Resolution
+nslookup networkwalks.com
+Nmap Verification
+nmap --version
+
+These tests were used to confirm Internet connectivity, DNS resolution, and availability of a key penetration-testing tool.
+
+[INSERT SCREENSHOT – Connectivity Tests]
+
+5. Troubleshooting
+
+The main difference from the instructor's reference setup was the host platform.
+
+The original instructions use VirtualBox on Windows, while my system uses an Apple M2 Mac. Due to the Apple Silicon architecture, I used UTM with Kali Linux ARM64 instead.
+
+The existing Kali installation was retained to avoid affecting university-related files and configurations.
+
+6. Snapshot and Recovery
+
+After configuring the laboratory, a recovery point/snapshot was maintained for the Kali environment.
+
+This provides a way to return to a known working state before performing future cybersecurity exercises that may modify the VM.
+
+[INSERT SCREENSHOT – VM SNAPSHOT/BACKUP]
+
+7. Learning Outcomes
+
+Through this Week 1 task, I gained practical experience with:
+
+Setting up a virtual cybersecurity environment.
+Running Kali Linux on Apple Silicon.
+Configuring IPv4 networking and routing.
+Testing Internet and DNS connectivity.
+Verifying penetration-testing tools.
+Using VM recovery mechanisms.
+Troubleshooting virtualization and networking differences between platforms.
+8. Security & Ethical Use
+
+The laboratory is intended strictly for educational and authorized security testing. Any scanning, reconnaissance, or penetration-testing activities should only target systems that are owned by the tester or where explicit permission has been provided.
+
+9. Conclusion
+
+The Week 1 cybersecurity laboratory was successfully prepared using UTM on an Apple M2 Mac with Kali Linux ARM64. The required network configuration, connectivity, tool verification, file-sharing capabilities, and recovery considerations were addressed, providing a foundation for the upcoming cybersecurity tasks.
